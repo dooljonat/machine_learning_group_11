@@ -1,2 +1,4 @@
-CAP 5610 Presentation.pdf
-CAP 5610 Presentation(1).pptx
+.venv/
+__pycache__/
+.pytest_cache
+*.pyc

@@ -70,6 +70,40 @@ Each member is responsible for implementing and evaluating 2 models on Tiny Imag
 
 ---
 
+## Repository Structure
+
+```
+├── dataset/
+│   └── loader.py               # Tiny ImageNet loading and configuration
+│
+├── decision_tree/
+│   └── model.py                # Decision Tree (Armin)
+├── lstm/
+│   └── model.py                # LSTM (Armin)
+│
+├── naive_bayes/
+│   └── model.py                # Naive Bayes Classifier (Austin)
+├── mlp/
+│   └── model.py                # Multi-layer Perceptron (Austin)
+│
+├── linear_svm/
+│   └── model.py                # Linear SVM (Brady)
+├── cnn/
+│   └── model.py                # CNN (Brady)
+│
+├── kernel_svm/
+│   └── model.py                # Kernel SVM (Jonathan)
+├── llm/
+│   └── model.py                # LLM Decoder-only (Jonathan)
+│
+├── logistic_regression/
+│   └── model.py                # Logistic Regression (Thomas)
+└── transformer/
+    └── model.py                # Transformer Encoder-only (Thomas)
+```
+
+---
+
 ## Evaluation Metrics
 
 **Standard:**
