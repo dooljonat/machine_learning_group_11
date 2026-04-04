@@ -4,17 +4,24 @@ Tiny ImageNet data loader.
 Provides two output modes:
   - get_numpy()       -> (X_train, y_train, X_val, y_val) as flat float32 numpy arrays
                          For sklearn models: Decision Tree, Naive Bayes, SVM, Logistic Regression
+  - get_kfold_numpy() -> generator of (X_tr, y_tr, X_v, y_v) over k stratified folds
+                         For hyperparameter tuning; uses train split only, valid stays held-out
   - get_dataloaders() -> (train_loader, val_loader) as PyTorch DataLoaders
                          For neural net models: MLP, CNN, LSTM, Transformer, LLM
   - get_raw()         -> raw HuggingFace Dataset for a given split
                          For custom preprocessing in individual model folders
 
 Usage example:
-    from dataset.loader import DataConfig, get_numpy, get_dataloaders
+    from dataset.loader import DataConfig, get_numpy, get_dataloaders, get_kfold_numpy
 
     # Sklearn models
     config = DataConfig(max_samples=10000)
     X_train, y_train, X_val, y_val = get_numpy(config)
+
+    # K-fold cross validation (for hyperparameter tuning)
+    config = DataConfig(max_samples=10000, n_splits=5)
+    for fold, (X_tr, y_tr, X_v, y_v) in enumerate(get_kfold_numpy(config)):
+        ...
 
     # Neural net models
     config = DataConfig(batch_size=64)
@@ -42,6 +49,9 @@ class DataConfig:
     normalize: bool = True   # scale pixel values to [0.0, 1.0]
     max_samples: int = None  # cap dataset size per split (None = use all)
                              # recommended for slow models (SVM, Decision Tree)
+
+    # --- K-fold mode ---
+    n_splits: int = 5        # number of folds for get_kfold_numpy()
 
 # ---------------------------------------------------------------------------
 # Internal helpers
@@ -105,6 +115,35 @@ def get_numpy(config: DataConfig = None):
     X_train, y_train = _split_to_arrays("train")
     X_val,   y_val   = _split_to_arrays("valid")
     return X_train, y_train, X_val, y_val
+
+
+def get_kfold_numpy(config: DataConfig = None):
+    """
+    Yield stratified k-fold splits over the training set.
+
+    Each iteration yields:
+        X_train_fold : float32 array, shape (N*(k-1)/k, 12288)
+        y_train_fold : int64  array
+        X_val_fold   : float32 array, shape (N/k, 12288)
+        y_val_fold   : int64  array
+
+    The HuggingFace 'valid' split is NOT used here — it remains the
+    final held-out test set. Use this function for hyperparameter search only.
+    """
+    from sklearn.model_selection import StratifiedKFold
+
+    if config is None:
+        config = DataConfig()
+
+    ds = _maybe_truncate(_load_hf("train"), config.max_samples)
+    X = np.stack([np.array(s["image"], dtype=np.float32).flatten() for s in ds])
+    y = np.array([s["label"] for s in ds], dtype=np.int64)
+    if config.normalize:
+        X /= 255.0
+
+    skf = StratifiedKFold(n_splits=config.n_splits, shuffle=True, random_state=42)
+    for train_idx, val_idx in skf.split(X, y):
+        yield X[train_idx], y[train_idx], X[val_idx], y[val_idx]
 
 
 def get_dataloaders(config: DataConfig = None):
@@ -175,3 +214,8 @@ if __name__ == "__main__":
     print(f"  batch labels : {tuple(labels.shape)}  dtype={labels.dtype}")
     print(f"  train batches: {len(train_loader)}")
     print(f"  val batches  : {len(val_loader)}")
+
+    print("\n=== K-Fold mode (n_splits=3, max_samples=300) ===")
+    cfg = DataConfig(max_samples=300, n_splits=3)
+    for fold, (X_tr, y_tr, X_v, y_v) in enumerate(get_kfold_numpy(cfg)):
+        print(f"  fold {fold}: train={X_tr.shape}, val={X_v.shape}")

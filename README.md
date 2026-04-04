@@ -18,8 +18,6 @@
 
 Given an image, the model should correctly identify the class of the image.
 
-**Applications:** Disease identification, facial recognition, automatic content tagging, finding similar images to an input.
-
 ---
 
 ## Dataset: Tiny ImageNet
