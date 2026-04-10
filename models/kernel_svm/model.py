@@ -20,7 +20,7 @@ from dataset.loader import DataConfig, get_numpy, get_kfold_numpy
 RESULTS_DIR = Path(__file__).parent / "results"
 
 
-def build_pipeline(C=10.0, gamma='scale', n_components=200):
+def build_pipeline(C=10.0, gamma='scale', n_components=500):
     """
     Build and return a sklearn Pipeline:
     PCA -> StandardScaler -> RBF SVC.
@@ -47,8 +47,8 @@ def tune(config: DataConfig):
     # Hyperparameters to search through
     param_grid = [
         (C, gamma)
-        for C     in [0.1, 1.0, 10.0, 100.0]
-        for gamma in ['scale', 'auto']
+        for C     in [0.1, 1.0, 10.0, 100.0, 1000.0]
+        for gamma in [0.001, 0.01, 0.1, 'scale', 'auto']
     ]
 
     # Search through possible hyperparameter combinations
@@ -141,8 +141,11 @@ def train_and_eval(best_params: dict, config: DataConfig):
 
 
 if __name__ == "__main__":
-    tune_cfg = DataConfig(max_samples_per_class=25, n_splits=5)
-    eval_cfg = DataConfig(max_samples_per_class=100)
+    # Use more data for better performance
+    # Tuning: 100 samples per class for k-fold CV (20,000 total samples)
+    # Eval: 500 samples per class for final training (100,000 total samples - all available data)
+    tune_cfg = DataConfig(max_samples_per_class=100, n_splits=5)
+    eval_cfg = DataConfig(max_samples_per_class=500)
 
     best_params = tune(tune_cfg)
     train_and_eval(best_params, eval_cfg)
