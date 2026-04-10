@@ -95,7 +95,7 @@ def get_numpy(config: DataConfig = None):
     def _split_to_arrays(split):
         ds = _maybe_truncate(_load_hf(split), config.max_samples)
         X = np.stack(
-            [np.array(sample["image"], dtype=np.float32).flatten() for sample in ds]
+            [np.array(sample["image"].convert("RGB").resize((64, 64)), dtype=np.float32).flatten() for sample in ds]
         )
         y = np.array([sample["label"] for sample in ds], dtype=np.int64)
         if config.normalize:
@@ -137,7 +137,7 @@ def get_dataloaders(config: DataConfig = None):
 
         def __getitem__(self, idx):
             sample = self.ds[idx]
-            return to_tensor(sample["image"]), sample["label"]
+            return to_tensor(sample["image"].convert("RGB").resize((64, 64))), sample["label"]
 
     train_loader = DataLoader(
         TinyImageNetDataset("train"),
