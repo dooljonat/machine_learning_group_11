@@ -53,12 +53,18 @@ class DataConfig:
     # --- K-fold mode ---
     n_splits: int = 5        # number of folds for get_kfold_numpy()
 
+    # --- Class balancing ---
+    max_samples_per_class: int = None  # cap samples per class (None = use all)
+                                       # applied after max_samples truncation
+
 # ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
 
 def _load_hf(split: str):
-    """Load a HuggingFace split, cached locally after first download."""
+    """
+    Load a HuggingFace split, cached locally after first download.
+    """
     from datasets import load_dataset as hf_load
     return hf_load("zh-plus/tiny-imagenet", split=split)
 
@@ -67,6 +73,21 @@ def _maybe_truncate(ds, max_samples):
     if max_samples is not None and max_samples < len(ds):
         return ds.select(range(max_samples))
     return ds
+
+
+def _balance_truncate(X, y, max_per_class, rng=np.random.RandomState(42)):
+    """
+    Return a class-balanced subset with at most max_per_class samples per class.
+    """
+    indices = []
+    for cls in np.unique(y):
+        cls_idx = np.where(y == cls)[0]
+        if max_per_class < len(cls_idx):
+            cls_idx = rng.choice(cls_idx, max_per_class, replace=False)
+        indices.append(cls_idx)
+    indices = np.concatenate(indices)
+    rng.shuffle(indices)
+    return X[indices], y[indices]
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -105,11 +126,13 @@ def get_numpy(config: DataConfig = None):
     def _split_to_arrays(split):
         ds = _maybe_truncate(_load_hf(split), config.max_samples)
         X = np.stack(
-            [np.array(sample["image"], dtype=np.float32).flatten() for sample in ds]
+            [np.array(sample["image"].convert("RGB").resize((64, 64)), dtype=np.float32).flatten() for sample in ds]
         )
         y = np.array([sample["label"] for sample in ds], dtype=np.int64)
         if config.normalize:
             X /= 255.0
+        if config.max_samples_per_class is not None:
+            X, y = _balance_truncate(X, y, config.max_samples_per_class)
         return X, y
 
     X_train, y_train = _split_to_arrays("train")
@@ -127,8 +150,7 @@ def get_kfold_numpy(config: DataConfig = None):
         X_val_fold   : float32 array, shape (N/k, 12288)
         y_val_fold   : int64  array
 
-    The HuggingFace 'valid' split is NOT used here — it remains the
-    final held-out test set. Use this function for hyperparameter search only.
+    (The HuggingFace 'valid' split is NOT used here... Use this function for hyperparameter search)
     """
     from sklearn.model_selection import StratifiedKFold
 
@@ -136,10 +158,12 @@ def get_kfold_numpy(config: DataConfig = None):
         config = DataConfig()
 
     ds = _maybe_truncate(_load_hf("train"), config.max_samples)
-    X = np.stack([np.array(s["image"], dtype=np.float32).flatten() for s in ds])
+    X = np.stack([np.array(s["image"].convert("RGB").resize((64, 64)), dtype=np.float32).flatten() for s in ds])
     y = np.array([s["label"] for s in ds], dtype=np.int64)
     if config.normalize:
         X /= 255.0
+    if config.max_samples_per_class is not None:
+        X, y = _balance_truncate(X, y, config.max_samples_per_class)
 
     skf = StratifiedKFold(n_splits=config.n_splits, shuffle=True, random_state=42)
     for train_idx, val_idx in skf.split(X, y):
@@ -176,7 +200,7 @@ def get_dataloaders(config: DataConfig = None):
 
         def __getitem__(self, idx):
             sample = self.ds[idx]
-            return to_tensor(sample["image"]), sample["label"]
+            return to_tensor(sample["image"].convert("RGB").resize((64, 64))), sample["label"]
 
     train_loader = DataLoader(
         TinyImageNetDataset("train"),
