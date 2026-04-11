@@ -4,13 +4,15 @@ Run this before tuning to validate your choice of PCA components.
 """
 
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend to prevent crashes
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from dataset.loader import DataConfig, get_numpy
 
 print("Loading training data...")
-# Use a reasonable sample size for analysis (all 500 per class)
-config = DataConfig(max_samples_per_class=500)
+# Use a reasonable sample size for analysis (reduced to prevent memory issues)
+config = DataConfig(max_samples_per_class=100)  # Reduced from 500
 X_train, y_train, X_val, y_val = get_numpy(config)
 print(f"Loaded {X_train.shape[0]} training samples, {X_train.shape[1]} features")
 

@@ -23,16 +23,16 @@ RESULTS_DIR = Path(__file__).parent / "results"
 def build_pipeline(C=10.0, gamma='scale', n_components=500):
     """
     Build and return a sklearn Pipeline:
-    PCA -> StandardScaler -> RBF SVC.
+    StandardScaler -> PCA -> RBF SVC.
 
-    PCA is for dimensionality reduction and finding the most 'important' features for the classification task
     StandardScaler standardizes features by removing the mean and scaling to unit variance
+    PCA is for dimensionality reduction and finding the most 'important' features for the classification task
     SVC is the kernel SVM using the RBF kernel and specified values of C and gamma
     """
 
     return Pipeline([
-        ('pca',    PCA(n_components=n_components, whiten=True, random_state=42)),
         ('scaler', StandardScaler()),
+        ('pca',    PCA(n_components=n_components, whiten=True, random_state=42)),
         ('svc',    SVC(kernel='rbf', C=C, gamma=gamma, decision_function_shape='ovo')),
     ])
 
@@ -47,8 +47,8 @@ def tune(config: DataConfig):
     # Hyperparameters to search through
     param_grid = [
         (C, gamma)
-        for C     in [0.1, 1.0, 10.0, 100.0, 1000.0]
-        for gamma in [0.001, 0.01, 0.1, 'scale', 'auto']
+        for C     in [0.001, 0.01, 0.1, 1.0, 10.0, 100.0]
+        for gamma in [0.001, 0.01, 0.1, 1.0, 'scale', 'auto']
     ]
 
     # Search through possible hyperparameter combinations
@@ -141,11 +141,11 @@ def train_and_eval(best_params: dict, config: DataConfig):
 
 
 if __name__ == "__main__":
-    # Use more data for better performance
-    # Tuning: 100 samples per class for k-fold CV (20,000 total samples)
-    # Eval: 500 samples per class for final training (100,000 total samples - all available data)
-    tune_cfg = DataConfig(max_samples_per_class=100, n_splits=5)
-    eval_cfg = DataConfig(max_samples_per_class=500)
+    # Train on full dataset using best hyperparameters from grid search
+    # Best params found: C=100, gamma='auto'
+    best_params = {'C': 100, 'gamma': 'auto'}
 
-    best_params = tune(tune_cfg)
+    # Train on full dataset (500 samples per class = 100,000 total samples)
+    eval_cfg = DataConfig(max_samples_per_class=50)
+
     train_and_eval(best_params, eval_cfg)
