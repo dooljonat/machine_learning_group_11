@@ -1,0 +1,55 @@
+Epoch 1: Train Loss=4.9730 | Train Acc=2.77% | Val Acc=7.57% | Time=174.41s
+Epoch 2: Train Loss=4.5097 | Train Acc=5.91% | Val Acc=12.16% | Time=181.97s
+Epoch 3: Train Loss=4.3465 | Train Acc=7.43% | Val Acc=12.29% | Time=181.15s
+Epoch 4: Train Loss=4.2540 | Train Acc=8.27% | Val Acc=12.92% | Time=178.72s
+Epoch 5: Train Loss=4.1948 | Train Acc=8.97% | Val Acc=16.53% | Time=177.69s
+Epoch 6: Train Loss=4.1236 | Train Acc=9.86% | Val Acc=16.88% | Time=177.28s
+Epoch 7: Train Loss=4.0425 | Train Acc=10.99% | Val Acc=17.49% | Time=177.45s
+Epoch 8: Train Loss=3.9770 | Train Acc=11.65% | Val Acc=19.20% | Time=178.07s
+Epoch 9: Train Loss=3.9371 | Train Acc=12.48% | Val Acc=21.09% | Time=175.94s
+Epoch 10: Train Loss=3.8755 | Train Acc=13.13% | Val Acc=21.99% | Time=172.16s
+Epoch 11: Train Loss=3.7488 | Train Acc=15.26% | Val Acc=23.28% | Time=171.70s
+Epoch 12: Train Loss=3.6873 | Train Acc=16.30% | Val Acc=26.33% | Time=171.11s
+Epoch 13: Train Loss=3.6299 | Train Acc=17.21% | Val Acc=28.08% | Time=171.43s
+Epoch 14: Train Loss=3.5676 | Train Acc=18.54% | Val Acc=27.81% | Time=171.23s
+Epoch 15: Train Loss=3.5073 | Train Acc=19.57% | Val Acc=28.84% | Time=173.54s
+Epoch 16: Train Loss=3.4477 | Train Acc=20.59% | Val Acc=30.26% | Time=173.01s
+Epoch 17: Train Loss=3.3972 | Train Acc=21.69% | Val Acc=31.15% | Time=174.54s
+Epoch 18: Train Loss=3.3476 | Train Acc=22.48% | Val Acc=31.57% | Time=174.63s
+Epoch 19: Train Loss=3.3076 | Train Acc=23.12% | Val Acc=32.10% | Time=172.40s
+Epoch 20: Train Loss=3.2543 | Train Acc=24.20% | Val Acc=31.91% | Time=173.35s
+Epoch 21: Train Loss=3.1638 | Train Acc=25.63% | Val Acc=34.66% | Time=172.91s
+Epoch 22: Train Loss=3.1323 | Train Acc=26.40% | Val Acc=34.37% | Time=171.43s
+Epoch 23: Train Loss=3.0946 | Train Acc=27.34% | Val Acc=34.79% | Time=172.15s
+Epoch 24: Train Loss=3.0744 | Train Acc=27.58% | Val Acc=35.47% | Time=173.22s
+Epoch 25: Train Loss=3.0415 | Train Acc=28.14% | Val Acc=35.83% | Time=174.22s
+Epoch 26: Train Loss=3.0081 | Train Acc=28.86% | Val Acc=35.92% | Time=173.20s
+Epoch 27: Train Loss=2.9786 | Train Acc=29.56% | Val Acc=36.49% | Time=171.67s
+Epoch 28: Train Loss=2.9475 | Train Acc=29.86% | Val Acc=36.53% | Time=171.74s
+Epoch 29: Train Loss=2.9191 | Train Acc=30.62% | Val Acc=37.20% | Time=171.45s
+Epoch 30: Train Loss=2.8939 | Train Acc=31.19% | Val Acc=36.89% | Time=170.69s
+Epoch 31: Train Loss=2.8379 | Train Acc=32.16% | Val Acc=38.37% | Time=170.43s
+Epoch 32: Train Loss=2.8142 | Train Acc=32.59% | Val Acc=38.55% | Time=170.57s
+Epoch 33: Train Loss=2.8014 | Train Acc=32.78% | Val Acc=38.88% | Time=171.17s
+Epoch 34: Train Loss=2.7820 | Train Acc=33.34% | Val Acc=39.26% | Time=174.20s
+Epoch 35: Train Loss=2.7638 | Train Acc=33.75% | Val Acc=39.03% | Time=172.44s
+Epoch 36: Train Loss=2.7450 | Train Acc=33.97% | Val Acc=39.34% | Time=172.18s
+Epoch 37: Train Loss=2.7264 | Train Acc=34.51% | Val Acc=39.75% | Time=172.56s
+Epoch 38: Train Loss=2.7149 | Train Acc=34.44% | Val Acc=40.24% | Time=175.46s
+Epoch 39: Train Loss=2.6938 | Train Acc=35.14% | Val Acc=39.76% | Time=174.55s
+Epoch 40: Train Loss=2.6753 | Train Acc=35.36% | Val Acc=39.79% | Time=174.29s
+Epoch 41: Train Loss=2.6418 | Train Acc=36.10% | Val Acc=40.66% | Time=174.57s
+Epoch 42: Train Loss=2.6278 | Train Acc=36.48% | Val Acc=40.90% | Time=174.38s
+Epoch 43: Train Loss=2.6105 | Train Acc=36.91% | Val Acc=40.55% | Time=175.29s
+Epoch 44: Train Loss=2.6054 | Train Acc=36.99% | Val Acc=40.85% | Time=174.86s
+Epoch 45: Train Loss=2.5991 | Train Acc=37.04% | Val Acc=40.76% | Time=173.04s
+Epoch 46: Train Loss=2.5836 | Train Acc=37.16% | Val Acc=41.09% | Time=173.89s
+Epoch 47: Train Loss=2.5781 | Train Acc=37.52% | Val Acc=41.09% | Time=173.34s
+Epoch 48: Train Loss=2.5643 | Train Acc=37.79% | Val Acc=40.89% | Time=176.18s
+Epoch 49: Train Loss=2.5506 | Train Acc=38.00% | Val Acc=41.09% | Time=174.49s
+Epoch 50: Train Loss=2.5453 | Train Acc=38.06% | Val Acc=41.69% | Time=172.91s
+
+==============================
+Total Training Time: 8695.36 seconds
+Average Epoch Time: 173.91 seconds
+==============================

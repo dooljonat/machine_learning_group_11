@@ -1,0 +1,113 @@
+Data loaded:
+  X_train: (100000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(100000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 1.0, max_iter = 5000
+Total time for training: 1410.09 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.0870
+
+Evaluating on testing set...
+Validation Accuracy: 0.0636
+
+_________________________________________________________________________________________
+Data loaded:
+  X_train: (100000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 500 components...
+Preprocessed shapes: X_train=(100000, 500), X_val=(10000, 500)
+
+Training Linear SVM...
+Initialized model: C = 5.0, max_iter = 5000
+Total time for training: 3848.01 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.1215
+
+Evaluating on testing set...
+Validation Accuracy: 0.0575
+
+_________________________________________________________________________________________
+Data loaded:
+  X_train: (100000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 250 components...
+Preprocessed shapes: X_train=(100000, 250), X_val=(10000, 250)
+
+Training Linear SVM...
+Initialized model: C = 1.0, max_iter = 5000
+Total time for training: 2690.36 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.0924
+
+Evaluating on testing set...
+Validation Accuracy: 0.0625
+
+_________________________________________________________________________________________
+Data loaded:
+  X_train: (100000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 100 components...
+Preprocessed shapes: X_train=(100000, 100), X_val=(10000, 100)
+
+Training Linear SVM...
+Initialized model: C = 1.0, max_iter = 5000
+Total time for training: 942.32 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.0749
+
+Evaluating on testing set...
+Validation Accuracy: 0.0615
+
+_________________________________________________________________________________________
+Data loaded:
+  X_train: (100000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 150 components...
+Preprocessed shapes: X_train=(100000, 150), X_val=(10000, 150)
+
+Training Linear SVM...
+Initialized model: C = 1.0, max_iter = 5000
+Total time for training: 1483.92 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.0821
+
+Evaluating on testing set...
+Validation Accuracy: 0.0633
+
+_________________________________________________________________________________________
+Data loaded:
+  X_train: (100000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Extracting HOG features...
+Extracting HOG features...
+Preprocessed shapes: X_train=(100000, 1764), X_val=(10000, 1764)
+
+Training Linear SVM...
+Initialized model: C = 1.0, max_iter = 5000
+Total time for training: 21626.84 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.4625
+
+Evaluating on testing set...
+Validation Accuracy: 0.0613

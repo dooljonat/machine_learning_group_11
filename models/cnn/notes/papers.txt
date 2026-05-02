@@ -1,0 +1,4 @@
+https://arxiv.org/html/2505.08259v1
+https://cs231n.stanford.edu/reports/2017/pdfs/935.pdf
+https://github.com/tjmoon0104/Tiny-ImageNet-Classifier
+http://vision.stanford.edu/teaching/cs231n/reports/2015/pdfs/leonyao_final.pdf
