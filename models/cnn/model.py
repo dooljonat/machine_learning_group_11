@@ -1,9 +1,11 @@
 # Convolutional Neural Network (CNN) model - Brady Napier
 
 """
-Note: actual training was done through a .ipynb file in Google Colab. This .py file was created using the .ipynb using AI so that everything would be in one place, easy to run, and structured.
+Note: actual training was done through a .ipynb file in Google Colab. This .py file was created using the training .ipynb using AI so that everything would be in one place, easy to run, and structured.
 
-Usage Instructions: from the root dir (machine_learning_group_11) run python -m models.cnn.model using the command line arguments appropriate
+Note: make sure all libraries and requirements have been properly installed and you are running in an environment where the libraries are accessible.
+
+Usage Instructions: from the root dir (machine_learning_group_11) run: python -m models.cnn.model using the command line arguments appropriate
 - To run with a saved model use: --load_model path/to/model (ex: --load_model models/cnn/results/tiny_imagenet_cnn_with_aug.pth, models available are cnn_no_aug and cnn_with_aug)
 - To train a model from scratch use: --model "cnn" or --model "resnet"
     - To specify the number of epochs use: --epochs 50 (default is 30)
@@ -26,7 +28,7 @@ import argparse
 import matplotlib.pyplot as plt
 import seaborn as sns
 import random
-from sklearn.metrics import confusion_matrix, precision_score, recall_score
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
 import os
 
 from dataset.loader import DataConfig, get_dataloaders
@@ -219,8 +221,9 @@ def evaluate_full(model, loader):
     # Macro precision/recall (IMPORTANT for 200 classes)
     precision = precision_score(all_labels, all_preds, average="macro", zero_division=0)
     recall = recall_score(all_labels, all_preds, average="macro", zero_division=0)
+    f1 = f1_score(all_labels, all_preds, average='macro', zero_division=0)
 
-    return accuracy, precision, recall, all_preds, all_labels
+    return accuracy, precision, recall, f1, all_preds, all_labels
 
 
 def train(model, train_loader, val_loader, epochs=30):
@@ -359,12 +362,13 @@ if __name__ == "__main__":
         model.load_state_dict(torch.load(args.load_model, map_location=device))
         print("Loaded model:", args.load_model)
 
-        acc, prec, rec, preds, labels = evaluate_full(model, val_loader)
+        acc, prec, rec, f1, preds, labels = evaluate_full(model, val_loader)
 
         print("\n=== Evaluation Results ===")
         print(f"Accuracy : {acc:.2f}%")
-        print(f"Precision: {prec:.4f}")
-        print(f"Recall   : {rec:.4f}")
+        print(f"Precision: {prec * 100:.2f}%")
+        print(f"Recall   : {rec * 100:.2f}%")
+        print(f"F1 Score : {f1 * 100:.2f}%")
 
         if not args.no_plots:
             save_confusion_matrix_from_preds(preds, labels, model_name)
@@ -380,12 +384,13 @@ if __name__ == "__main__":
         print("Model saved!")
 
         # Final evaluation
-        acc, prec, rec, preds, labels = evaluate_full(model, val_loader)
+        acc, prec, rec, f1, preds, labels = evaluate_full(model, val_loader)
 
         print("\n=== Final Evaluation ===")
         print(f"Accuracy : {acc:.2f}%")
-        print(f"Precision: {prec:.4f}")
-        print(f"Recall   : {rec:.4f}")
+        print(f"Precision: {prec:.2f}")
+        print(f"Recall   : {rec:.2f}")
+        print(f"F1 Score : {f1 * 100:.2f}%")
 
         if not args.no_plots:
             save_plots(history, model_name)
