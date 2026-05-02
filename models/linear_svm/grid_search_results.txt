@@ -1,0 +1,704 @@
+=== Running: C=0.1, PCA=100 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 100 components...
+Preprocessed shapes: X_train=(20000, 100), X_val=(10000, 100)
+
+Training Linear SVM...
+Initialized model: C = 0.1, max_iter = 5000
+Total time for training: 25.65 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.1820
+
+Evaluating on testing set...
+Validation Accuracy: 0.0296
+
+=== Running: C=0.1, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 0.1, max_iter = 5000
+Total time for training: 55.64 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2135
+
+Evaluating on testing set...
+Validation Accuracy: 0.0299
+
+=== Running: C=0.1, PCA=300 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 300 components...
+Preprocessed shapes: X_train=(20000, 300), X_val=(10000, 300)
+
+Training Linear SVM...
+Initialized model: C = 0.1, max_iter = 5000
+Total time for training: 85.52 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2379
+
+Evaluating on testing set...
+Validation Accuracy: 0.0285
+
+=== Running: C=0.1, PCA=500 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 500 components...
+Preprocessed shapes: X_train=(20000, 500), X_val=(10000, 500)
+
+Training Linear SVM...
+Initialized model: C = 0.1, max_iter = 5000
+Total time for training: 163.60 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2801
+
+Evaluating on testing set...
+Validation Accuracy: 0.0234
+
+=== Running: C=0.1, PCA=1000 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 1000 components...
+Preprocessed shapes: X_train=(20000, 1000), X_val=(10000, 1000)
+
+Training Linear SVM...
+Initialized model: C = 0.1, max_iter = 5000
+Total time for training: 352.67 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.4059
+
+Evaluating on testing set...
+Validation Accuracy: 0.0215
+
+=== Running: C=1, PCA=100 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 100 components...
+Preprocessed shapes: X_train=(20000, 100), X_val=(10000, 100)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 26.69 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.1827
+
+Evaluating on testing set...
+Validation Accuracy: 0.0290
+
+=== Running: C=1, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 55.32 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2128
+
+Evaluating on testing set...
+Validation Accuracy: 0.0287
+
+=== Running: C=1, PCA=300 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 300 components...
+Preprocessed shapes: X_train=(20000, 300), X_val=(10000, 300)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 87.93 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2376
+
+Evaluating on testing set...
+Validation Accuracy: 0.0278
+
+=== Running: C=1, PCA=500 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 500 components...
+Preprocessed shapes: X_train=(20000, 500), X_val=(10000, 500)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 165.71 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2824
+
+Evaluating on testing set...
+Validation Accuracy: 0.0241
+
+=== Running: C=1, PCA=1000 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 1000 components...
+Preprocessed shapes: X_train=(20000, 1000), X_val=(10000, 1000)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 353.80 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.4084
+
+Evaluating on testing set...
+Validation Accuracy: 0.0207
+
+=== Running: C=3, PCA=100 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 100 components...
+Preprocessed shapes: X_train=(20000, 100), X_val=(10000, 100)
+
+Training Linear SVM...
+Initialized model: C = 3, max_iter = 5000
+Total time for training: 25.22 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.1821
+
+Evaluating on testing set...
+Validation Accuracy: 0.0293
+
+=== Running: C=3, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 3, max_iter = 5000
+Total time for training: 57.84 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2127
+
+Evaluating on testing set...
+Validation Accuracy: 0.0296
+
+=== Running: C=3, PCA=300 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 300 components...
+Preprocessed shapes: X_train=(20000, 300), X_val=(10000, 300)
+
+Training Linear SVM...
+Initialized model: C = 3, max_iter = 5000
+Total time for training: 97.78 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2379
+
+Evaluating on testing set...
+Validation Accuracy: 0.0277
+
+=== Running: C=3, PCA=500 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 500 components...
+Preprocessed shapes: X_train=(20000, 500), X_val=(10000, 500)
+
+Training Linear SVM...
+Initialized model: C = 3, max_iter = 5000
+Total time for training: 165.54 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2791
+
+Evaluating on testing set...
+Validation Accuracy: 0.0255
+
+=== Running: C=3, PCA=1000 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 1000 components...
+Preprocessed shapes: X_train=(20000, 1000), X_val=(10000, 1000)
+
+Training Linear SVM...
+Initialized model: C = 3, max_iter = 5000
+Total time for training: 356.04 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.4090
+
+Evaluating on testing set...
+Validation Accuracy: 0.0219
+
+=== Running: C=5, PCA=100 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 100 components...
+Preprocessed shapes: X_train=(20000, 100), X_val=(10000, 100)
+
+Training Linear SVM...
+Initialized model: C = 5, max_iter = 5000
+Total time for training: 24.73 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.1815
+
+Evaluating on testing set...
+Validation Accuracy: 0.0292
+
+=== Running: C=5, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 5, max_iter = 5000
+Total time for training: 54.38 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2109
+
+Evaluating on testing set...
+Validation Accuracy: 0.0290
+
+=== Running: C=5, PCA=300 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 300 components...
+Preprocessed shapes: X_train=(20000, 300), X_val=(10000, 300)
+
+Training Linear SVM...
+Initialized model: C = 5, max_iter = 5000
+Total time for training: 100.04 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2391
+
+Evaluating on testing set...
+Validation Accuracy: 0.0281
+
+=== Running: C=5, PCA=500 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 500 components...
+Preprocessed shapes: X_train=(20000, 500), X_val=(10000, 500)
+
+Training Linear SVM...
+Initialized model: C = 5, max_iter = 5000
+Total time for training: 170.52 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2824
+
+Evaluating on testing set...
+Validation Accuracy: 0.0250
+
+=== Running: C=5, PCA=1000 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 1000 components...
+Preprocessed shapes: X_train=(20000, 1000), X_val=(10000, 1000)
+
+Training Linear SVM...
+Initialized model: C = 5, max_iter = 5000
+Total time for training: 349.98 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.4111
+
+Evaluating on testing set...
+Validation Accuracy: 0.0208
+
+=== Running: C=10, PCA=100 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 100 components...
+Preprocessed shapes: X_train=(20000, 100), X_val=(10000, 100)
+
+Training Linear SVM...
+Initialized model: C = 10, max_iter = 5000
+Total time for training: 25.14 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.1820
+
+Evaluating on testing set...
+Validation Accuracy: 0.0299
+
+=== Running: C=10, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 10, max_iter = 5000
+Total time for training: 54.00 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2128
+
+Evaluating on testing set...
+Validation Accuracy: 0.0303
+
+=== Running: C=10, PCA=300 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 300 components...
+Preprocessed shapes: X_train=(20000, 300), X_val=(10000, 300)
+
+Training Linear SVM...
+Initialized model: C = 10, max_iter = 5000
+Total time for training: 95.12 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2372
+
+Evaluating on testing set...
+Validation Accuracy: 0.0279
+
+=== Running: C=10, PCA=500 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 500 components...
+Preprocessed shapes: X_train=(20000, 500), X_val=(10000, 500)
+
+Training Linear SVM...
+Initialized model: C = 10, max_iter = 5000
+Total time for training: 159.47 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2816
+
+Evaluating on testing set...
+Validation Accuracy: 0.0247
+
+=== Running: C=10, PCA=1000 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 1000 components...
+Preprocessed shapes: X_train=(20000, 1000), X_val=(10000, 1000)
+
+Training Linear SVM...
+Initialized model: C = 10, max_iter = 5000
+Total time for training: 344.88 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.4081
+
+Evaluating on testing set...
+Validation Accuracy: 0.0216
+
+Final Results...
+C=10, PCA=200 | Train=0.2128, Val=0.0303
+C=0.1, PCA=200 | Train=0.2135, Val=0.0299
+C=10, PCA=100 | Train=0.1820, Val=0.0299
+C=0.1, PCA=100 | Train=0.1820, Val=0.0296
+C=3, PCA=200 | Train=0.2127, Val=0.0296
+C=3, PCA=100 | Train=0.1821, Val=0.0293
+C=5, PCA=100 | Train=0.1815, Val=0.0292
+C=1, PCA=100 | Train=0.1827, Val=0.0290
+C=5, PCA=200 | Train=0.2109, Val=0.0290
+C=1, PCA=200 | Train=0.2128, Val=0.0287
+C=0.1, PCA=300 | Train=0.2379, Val=0.0285
+C=5, PCA=300 | Train=0.2391, Val=0.0281
+C=10, PCA=300 | Train=0.2372, Val=0.0279
+C=1, PCA=300 | Train=0.2376, Val=0.0278
+C=3, PCA=300 | Train=0.2379, Val=0.0277
+C=3, PCA=500 | Train=0.2791, Val=0.0255
+C=5, PCA=500 | Train=0.2824, Val=0.0250
+C=10, PCA=500 | Train=0.2816, Val=0.0247
+C=1, PCA=500 | Train=0.2824, Val=0.0241
+C=0.1, PCA=500 | Train=0.2801, Val=0.0234
+C=3, PCA=1000 | Train=0.4090, Val=0.0219
+C=10, PCA=1000 | Train=0.4081, Val=0.0216
+C=0.1, PCA=1000 | Train=0.4059, Val=0.0215
+C=5, PCA=1000 | Train=0.4111, Val=0.0208
+C=1, PCA=1000 | Train=0.4084, Val=0.0207
+
+
+=== Running: C=1, PCA=150 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 150 components...
+Preprocessed shapes: X_train=(20000, 150), X_val=(10000, 150)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 43.56 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.1971
+
+Evaluating on testing set...
+Validation Accuracy: 0.0305
+
+=== Running: C=1, PCA=175 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 175 components...
+Preprocessed shapes: X_train=(20000, 175), X_val=(10000, 175)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 53.23 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2051
+
+Evaluating on testing set...
+Validation Accuracy: 0.0296
+
+=== Running: C=1, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 58.46 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2108
+
+Evaluating on testing set...
+Validation Accuracy: 0.0301
+
+=== Running: C=1, PCA=225 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 225 components...
+Preprocessed shapes: X_train=(20000, 225), X_val=(10000, 225)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 65.51 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2177
+
+Evaluating on testing set...
+Validation Accuracy: 0.0290
+
+=== Running: C=1, PCA=250 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 250 components...
+Preprocessed shapes: X_train=(20000, 250), X_val=(10000, 250)
+
+Training Linear SVM...
+Initialized model: C = 1, max_iter = 5000
+Total time for training: 75.81 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2236
+
+Evaluating on testing set...
+Validation Accuracy: 0.0298
+
+Final Results...
+C=1, PCA=150 | Train=0.1971, Val=0.0305
+C=1, PCA=200 | Train=0.2108, Val=0.0301
+C=1, PCA=250 | Train=0.2236, Val=0.0298
+C=1, PCA=175 | Train=0.2051, Val=0.0296
+C=1, PCA=225 | Train=0.2177, Val=0.0290
+
+=== Running: C=0.5, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 0.5, max_iter = 5000
+Total time for training: 113.29 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2107
+
+Evaluating on testing set...
+Validation Accuracy: 0.0300
+
+=== Running: C=1.0, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 1.0, max_iter = 5000
+Total time for training: 114.18 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2129
+
+Evaluating on testing set...
+Validation Accuracy: 0.0307
+
+=== Running: C=3.0, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 3.0, max_iter = 5000
+Total time for training: 106.48 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2112
+
+Evaluating on testing set...
+Validation Accuracy: 0.0288
+
+=== Running: C=5.0, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 5.0, max_iter = 5000
+Total time for training: 108.61 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2117
+
+Evaluating on testing set...
+Validation Accuracy: 0.0299
+
+=== Running: C=10.0, PCA=200 ===
+Data loaded:
+  X_train: (20000, 12288)
+  X_val:   (10000, 12288)
+
+Preprocessing data...
+Applying PCA: reducing to 200 components...
+Preprocessed shapes: X_train=(20000, 200), X_val=(10000, 200)
+
+Training Linear SVM...
+Initialized model: C = 10.0, max_iter = 5000
+Total time for training: 129.68 seconds
+
+Evaluating on training set...
+Training Accuracy: 0.2126
+
+Evaluating on testing set...
+Validation Accuracy: 0.0301
+C=1.0, PCA=200 | Train=0.2129, Val=0.0307
+C=10.0, PCA=200 | Train=0.2126, Val=0.0301
+C=0.5, PCA=200 | Train=0.2107, Val=0.0300
+C=5.0, PCA=200 | Train=0.2117, Val=0.0299
+C=3.0, PCA=200 | Train=0.2112, Val=0.0288
