@@ -9,6 +9,7 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.metrics import precision_score, recall_score, f1_score, classification_report
 from official.nlp.modeling.models import TransformerEncoder
 
+import os
 import numpy as np
 import tensorflow as tf
 import tensorflow_models as tfm
@@ -16,18 +17,22 @@ import tensorflow_models as tfm
 import matplotlib.pyplot as plt
 
 def save_history_graphs(history_history):
+    
+    os.makedirs("images", exist_ok=True)
     # Print out the graphs for each metric
     for metric_name in history_history.keys():
         print("Metric: ", metric_name)
         metric_data = history_history[metric_name]
+        plt.figure()
         plt.plot(metric_data)
         plt.title(str(metric_name) + " by epoch")
         plt.xlabel("epoch")
         plt.ylabel(metric_name)
-        plt.savefig(f"../images/{metric_name}_plot.png", dpi=300, bbox_inches="tight")
+        plt.savefig(f"images/{metric_name}_plot.png", dpi=300, bbox_inches="tight")
         plt.show()
 
 def save_confusion_matrix(y_true, y_pred):
+    os.makedirs("images", exist_ok=True)
     cm = confusion_matrix(y_true, y_pred, normalize="true")
 
     plt.figure(figsize=(10, 10))
@@ -36,7 +41,7 @@ def save_confusion_matrix(y_true, y_pred):
     plt.yticks([])
     plt.colorbar()
     plt.tight_layout()
-    plt.savefig(f"../images/confusion_matrix.png", dpi=300, bbox_inches="tight")
+    plt.savefig(f"images/confusion_matrix.png", dpi=300, bbox_inches="tight")
     plt.show()
 
 def save_score_report(y_true, y_pred):
@@ -86,7 +91,7 @@ def build_logistic_model(num_classes=200):
         tf.keras.Input(shape=(64, 64, 3)),
         tf.keras.layers.Flatten(),
         # Softmax replaces sigmoid, since it has the same effect anyways.
-        tf.keras.layers.Dense(units=num_classes, activation="softmax"),
+        tf.keras.layers.Dense(units=num_classes, activation="softmax", kernel_regularizer=tf.keras.regularizers.l2(1e-4)),
     ])
 
 
@@ -153,7 +158,7 @@ def get_datasets_v4(
     
 TINY_IMAGENET_CLASSES = 200
 
-epochs = 40
+epochs = 20
 
 train_ds, val_ds = get_datasets_v4()
 model = build_logistic_model(TINY_IMAGENET_CLASSES)
