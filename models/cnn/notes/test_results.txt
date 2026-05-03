@@ -1,0 +1,79 @@
+SMALL RUN #1 (traditional CNN architecture, no data augmentation, lr=1e-3, dropout = 0.5):
+Epoch 1: Loss=5.2396 | Train Acc=0.80% | Val Acc=1.55% 
+Epoch 2: Loss=5.1383 | Train Acc=1.24% | Val Acc=2.12% 
+Epoch 3: Loss=5.0520 | Train Acc=1.49% | Val Acc=3.25% 
+Epoch 4: Loss=4.9917 | Train Acc=1.61% | Val Acc=3.64% 
+Epoch 5: Loss=4.9625 | Train Acc=1.70% | Val Acc=4.26% 
+Epoch 6: Loss=4.8994 | Train Acc=2.17% | Val Acc=5.30% 
+Epoch 7: Loss=4.7434 | Train Acc=3.13% | Val Acc=7.31% 
+Epoch 8: Loss=4.5419 | Train Acc=4.75% | Val Acc=10.21% 
+Epoch 9: Loss=4.4338 | Train Acc=5.66% | Val Acc=9.65% 
+Epoch 10: Loss=4.3324 | Train Acc=6.68% | Val Acc=12.60%
+
+SMALL RUN #2 (traditional CNN architecture, no data augmentation, lr=1e-3, dropout = 0.5):
+Epoch 1: Train Loss=5.1632 | Train Acc=1.16% | Val Acc=2.17% | Time=60.77s
+Epoch 2: Train Loss=5.0089 | Train Acc=1.70% | Val Acc=2.87% | Time=60.42s
+Epoch 3: Train Loss=4.9180 | Train Acc=2.09% | Val Acc=3.20% | Time=57.83s
+Epoch 4: Train Loss=4.8698 | Train Acc=2.33% | Val Acc=5.89% | Time=57.64s
+Epoch 5: Train Loss=4.8163 | Train Acc=2.74% | Val Acc=7.07% | Time=56.92s
+Epoch 6: Train Loss=4.6834 | Train Acc=3.73% | Val Acc=9.44% | Time=57.97s
+Epoch 7: Train Loss=4.5010 | Train Acc=5.27% | Val Acc=11.74% | Time=57.65s
+Epoch 8: Train Loss=4.3566 | Train Acc=6.61% | Val Acc=12.18% | Time=61.71s
+Epoch 9: Train Loss=4.2404 | Train Acc=7.79% | Val Acc=15.84% | Time=71.94s
+Epoch 10: Train Loss=4.1483 | Train Acc=8.60% | Val Acc=15.55% | Time=68.84s
+
+==============================
+Total Training Time: 611.72 seconds
+Average Epoch Time: 61.17 seconds
+==============================
+
+SMALL RUN #3 (traditional CNN architecture, no data augmentation, lr=5e-4, weight_decay = 1e-4, dropout = 0.5):
+Epoch 1: Train Loss=4.9233 | Train Acc=3.19% | Val Acc=8.58% | Time=58.59s
+Epoch 2: Train Loss=4.3611 | Train Acc=7.66% | Val Acc=11.99% | Time=57.57s
+Epoch 3: Train Loss=4.1576 | Train Acc=9.79% | Val Acc=17.84% | Time=58.02s
+Epoch 4: Train Loss=4.0407 | Train Acc=11.10% | Val Acc=18.18% | Time=57.12s
+Epoch 5: Train Loss=3.9633 | Train Acc=11.94% | Val Acc=16.19% | Time=58.26s
+Epoch 6: Train Loss=3.8924 | Train Acc=12.71% | Val Acc=19.14% | Time=56.99s
+Epoch 7: Train Loss=3.8273 | Train Acc=13.65% | Val Acc=20.42% | Time=56.76s
+Epoch 8: Train Loss=3.7702 | Train Acc=14.37% | Val Acc=21.11% | Time=56.94s
+Epoch 9: Train Loss=3.7166 | Train Acc=15.07% | Val Acc=22.26% | Time=57.41s
+Epoch 10: Train Loss=3.6527 | Train Acc=16.07% | Val Acc=22.55% | Time=57.11s
+
+==============================
+Total Training Time: 574.82 seconds
+Average Epoch Time: 57.48 seconds
+==============================
+
+SMALL RUN #4 (traditional CNN architecture, data augmentation, lr=5e-4, weight_decay = 1e-4, dropout = 0.5):
+Epoch 1: Train Loss=5.0208 | Train Acc=2.62% | Val Acc=6.67% | Time=168.11s
+Epoch 2: Train Loss=4.4622 | Train Acc=6.94% | Val Acc=11.89% | Time=165.58s
+Epoch 3: Train Loss=4.2051 | Train Acc=9.65% | Val Acc=13.45% | Time=171.27s
+Epoch 4: Train Loss=4.0791 | Train Acc=10.88% | Val Acc=18.55% | Time=166.87s
+Epoch 5: Train Loss=4.0010 | Train Acc=12.15% | Val Acc=19.98% | Time=166.01s
+Epoch 6: Train Loss=3.9409 | Train Acc=13.01% | Val Acc=20.07% | Time=165.20s
+Epoch 7: Train Loss=3.8822 | Train Acc=13.55% | Val Acc=20.68% | Time=166.70s
+Epoch 8: Train Loss=3.8425 | Train Acc=14.25% | Val Acc=22.17% | Time=167.40s
+Epoch 9: Train Loss=3.8012 | Train Acc=14.78% | Val Acc=21.99% | Time=166.97s
+Epoch 10: Train Loss=3.7616 | Train Acc=15.43% | Val Acc=22.47% | Time=168.75s
+
+==============================
+Total Training Time: 1672.88 seconds
+Average Epoch Time: 167.29 seconds
+==============================
+
+SMALL RUN #5 (RESNET architecture, no data augmentation, lr=3e-4, weight_decay = 1e-4, dropout = 0.3):
+Epoch 1: Train Loss=4.3498 | Train Acc=9.48% | Val Acc=12.21% | Time=264.53s
+Epoch 2: Train Loss=3.6038 | Train Acc=19.18% | Val Acc=22.04% | Time=261.99s
+Epoch 3: Train Loss=3.2212 | Train Acc=25.70% | Val Acc=26.94% | Time=261.81s
+Epoch 4: Train Loss=2.9560 | Train Acc=30.75% | Val Acc=29.95% | Time=261.23s
+Epoch 5: Train Loss=2.7387 | Train Acc=34.98% | Val Acc=34.28% | Time=261.06s
+Epoch 6: Train Loss=2.5562 | Train Acc=38.66% | Val Acc=36.96% | Time=260.99s
+Epoch 7: Train Loss=2.4007 | Train Acc=41.56% | Val Acc=38.00% | Time=261.05s
+Epoch 8: Train Loss=2.2586 | Train Acc=44.52% | Val Acc=37.61% | Time=261.00s
+Epoch 9: Train Loss=2.1144 | Train Acc=47.60% | Val Acc=40.90% | Time=260.97s
+Epoch 10: Train Loss=1.9734 | Train Acc=50.27% | Val Acc=43.22% | Time=260.89s
+
+==============================
+Total Training Time: 2615.57 seconds
+Average Epoch Time: 261.56 seconds
+==============================
