@@ -1,1 +1,0 @@
-# LSTM model - Armin Delmo
